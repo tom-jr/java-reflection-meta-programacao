@@ -6,7 +6,7 @@ Vamos simular uma Interação client-servidor. Onde se realiza uma requisição 
 referente ao solicitando no forma XML || JSON.
 
 O problema que vamos resolver em nosso sistema simulado tem soluções existentes na web. De exemplo o professor cita
-Stream, VRaptor e Spring. Nos vamos realizar a nossa própria implementação nesse curso para entender como que por debaixo
+Xtream, VRaptor e Spring. Nos vamos realizar a nossa própria implementação nesse curso para entender como que por debaixo
 dos panos isso funciona. 
 
 ### Casos:
