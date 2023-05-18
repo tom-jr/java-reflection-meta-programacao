@@ -2,20 +2,20 @@
 
 ## Cenário de Atuação
 
-Vamos simular uma Interação client-servidor. Onde se realiza uma requisição para nossa web API e nos retornamos dados 
-referente ao solicitando no forma XML || JSON.
+Vamos simular uma Interação client-servidor. Onde se realiza requisições para nossa web API, para
+nos retornar dados referente ao requisitado em formato XML || JSON.
 
 O problema que vamos resolver em nosso sistema simulado tem soluções existentes na web. De exemplo o professor cita
-Xtream, VRaptor e Spring. Nos vamos realizar a nossa própria implementação nesse curso para entender como que por debaixo
+XStream, VRaptor e Spring. Nos vamos realizar a nossa própria implementação nesse curso para entender como que por debaixo
 dos panos isso funciona. 
 
 ### Casos:
-1. Determinar a class e o método a ser executado a cada requisição
+1. Determinar a class e o método a ser executado em cada requisição
  Uma solução seria quebrar a string da requisição de tal modo que tenhamos cada parte verificada e assim conseguir determinar
 qual serviço de nossa API está designado a tal requisição.
 
 Exemplo de como ficaria essa verificação da URL de requisição. Podemos claramente reparar que esse meio gera um ciclo de
-verificações imensa pois o processamento de verificação de paths e subPaths aumenta em função exponencial. Quanto mais paths
+verificações imensa, pois o processamento de verificação de paths e subPaths aumenta em função exponencial. Quanto mais paths
 e subPaths existirem. Mais demorado será essa verificação. Chamamos essa situação de __*complexidade ciclomática*__ 
 ~~~ java
 String path = "/produto/1";
@@ -37,7 +37,7 @@ if (subPaths[0].equals("produto")) { // /produto
 
 
 2. Determinar o formato de retorno dos recursos solicitados. Precisamos definir como montar nosso XML ou JSON de retorno
-que no caso para cada tipo de objeto de retorno um tipo de formação de retorno será necessário. Assim gerando o mesmo 
+que no caso para cada tipo de objeto de retorno, um tipo de formação de retorno será necessário. Assim gerando o mesmo 
 problema de complexidade ciclomática
 
 
