@@ -14,8 +14,8 @@ public class Alurator {
         String[] urlFragmentos = url.replaceFirst("/", "").split("/");
 
         try {
-            Class<?> myClass = Class.forName(String.format("%s.%s%s", this.qualifyName,
-                    StringUtils.capitalize(urlFragmentos[0]),"Controller"));
+            String qualifyName = String.format("%s.%s%s", this.qualifyName, StringUtils.capitalize(urlFragmentos[0]), "Controller");
+            Class<?> myClass = Class.forName(qualifyName);
 
             Object object = myClass.newInstance();
             System.out.println(object);
