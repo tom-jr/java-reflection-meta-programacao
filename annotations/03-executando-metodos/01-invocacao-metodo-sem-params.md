@@ -34,3 +34,25 @@ utilizamos **setAccessible(true)**
 Para **invocarmos** o method em questão utilizamos o method **invoke()** do Method
 passando como arg o construtor da class e um varArg com as class que representam
 os parâmetros do método.
+
+
+```java
+public class TesteInstanciaObjetoCorretamente {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        Class<?> class1 = Class.forName("br.com.alura.alurator.playground.controle.SubController");
+        Constructor<?> constructor = class1.getDeclaredConstructor(String.class);
+        constructor.setAccessible(true);
+        Object o = constructor.newInstance("Argumentoxxxx");
+        System.out.println(o instanceof SubController);
+
+        for (Method m: class1.getDeclaredMethods()) {
+            System.out.println(m);
+        }
+        System.out.println();
+        Method m = class1.getDeclaredMethod("printArg", String.class);
+        m.setAccessible(true);
+        Object invoked = m.invoke(o, "Antonio Carlos");
+        System.out.println(invoked);
+    }
+}
+```

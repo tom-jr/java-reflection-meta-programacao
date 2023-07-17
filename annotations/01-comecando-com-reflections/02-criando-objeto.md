@@ -1,6 +1,7 @@
 # Criando Objeto
 
-Como estudado anteriormente, queremos poder instanciar um objeto, com base na entrada dinâmica recebida em uma requisição por uma aplicação externa.
+Como estudado anteriormente, queremos poder instanciar um objeto, com base na entrada dinâmica recebida em uma 
+requisição por uma aplicação externa.
 
 ## Como criar um objeto de acordo com uma entrada dinâmica?
 
@@ -13,22 +14,25 @@ Usaremos a Class<t> para criar objetos de acordo com um dado dinâmico.
 - Lista constructors (privados ou não)
 - Cria objetos da class em questão
 
-Para seguir com nossa solução, iremos precisar de uma instancia da classe Class. Para conseguirmos essa instancia, usaremos
-a classe **Object** do java.util. A class Object é dita como a mãe de todo objeto Java e ela tem métodos que retornam **Class**
+Para seguir com nossa solução, iremos precisar de uma instancia da classe Class. Para conseguirmos essa instancia, 
+usaremos a classe **Object** do java.util. A class Object é dita como a mãe de todo objeto Java e ela tem métodos que
+retornam **Class**
 
 ### Métodos da classe Object que retornam class: 
 - Object.getClass: retorna um Class<T>
-Neste exemplo temos o retorno de uma class usando o getClass(). a classe MyObject tem o método getClass devido ela ser um objeto,
-logo ela herda esse método da class mãe Object. Então o method getClass retorna um Class<T> onde T é o tipo do objeto que chamou
-o getClass()
+Neste exemplo temos o retorno de uma class usando o getClass(). a classe MyObject tem o método getClass devido ela ser 
+- um objeto, logo ela herda esse método da class mãe Object. Então o method getClass retorna um Class<T> onde T é o tipo
+- do objeto que chamou o getClass()
+
 ~~~ java
 MyObject myObject = new MyObject();
 Class<? extends MyObject> = myObject.getClass();
 ~~~
 
 - Sintaxe.class(class literal)
-Na class literal nos chamamos o *.class* de um objeto, o mesmo retornará um Class<T>, onde T será o tipo de objeto em questão
-  Exemplo classLiteral:
+Na class literal nos chamamos o *.class* de um objeto, o mesmo retornará um Class<T>, onde T será o tipo de objeto em 
+questão. Exemplo classLiteral:
+
 ~~~ java
 Class<MyObject> myObjectClass =  MyObject.class;
 ~~~
